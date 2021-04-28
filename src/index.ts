@@ -1,4 +1,5 @@
 import config from 'config';
+import app from './app';
+import { logger } from './utils';
 
-const port = config.get<number>('port');
-console.log(port);
+app.listen(config.get<number>('port'), () => logger.info('hello, world'));
