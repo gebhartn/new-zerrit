@@ -3,15 +3,12 @@ import { applyCommonMiddleware, applyErrorMiddleware } from './middlewares';
 import routes from './routes';
 
 const app = express();
+app.disable('x-powered-by');
 
 applyCommonMiddleware(app);
 
-app.use('/', routes);
+app.use('/api', routes);
 
 applyErrorMiddleware(app);
-
-app.get('/', (req, res) => {
-    res.status(200).json({ hello: 'world' });
-});
 
 export default app;
