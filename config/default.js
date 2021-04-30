@@ -1,6 +1,7 @@
 module.exports = {
-  port: 8080,
+  httpPort: 8080,
+  httpsPort: 8443,
   aws: {
-    region: 'us-west-2',
-  },
+    region: "us-west-2"
+  }
 };
