@@ -1,8 +1,14 @@
-import { S3Client } from '@aws-sdk/client-s3';
-import config from 'config';
+import { fromEnv } from "@aws-sdk/credential-provider-env";
+import { S3Client, ListBucketsCommand, ListBucketsOutput } from "@aws-sdk/client-s3";
+import config from "config";
 
-const client = new S3Client({
-  region: config.get<string>('aws.region'),
+export const client = new S3Client({
+  region: config.get<string>("aws.region"),
+  credentials: fromEnv()
 });
 
-export default client;
+export const listBucket = async (): Promise<ListBucketsOutput> => {
+  const result = await client.send(new ListBucketsCommand({}));
+
+  return result;
+};
