@@ -13,13 +13,7 @@ export const timeoutExit = (duration = 10): ReturnType<typeof setTimeout> => {
     return timeout;
 };
 
-export const handleUncaughtException = ({
-    http,
-    https,
-}: {
-    http: HTTP;
-    https: HTTPS;
-}) => (err: Error): void => {
+export const handleUncaughtException = ({ http, https }: { http: HTTP; https: HTTPS }) => (err: Error): void => {
     logger.error(err);
     process.exitCode = 1;
     https.close(() => {

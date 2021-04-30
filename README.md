@@ -6,4 +6,4 @@ all these years later I am ready to replace that hole in his heart.
 
 #### Author
 
--   [Nicholas Gebhart](https://gebhart.dev/)
+- [Nicholas Gebhart](https://gebhart.dev/)

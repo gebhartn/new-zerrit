@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint --fix src/",
     "dev": "tsnd --respawn --transpile-only src/index.ts"
   },
   "devDependencies": {

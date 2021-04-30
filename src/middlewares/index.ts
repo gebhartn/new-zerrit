@@ -3,9 +3,7 @@ import { Application } from 'express';
 import { common } from './common';
 import { error } from './error';
 
-const applyMiddleware = (middlewares: Array<Function>) => (
-    app: Application,
-): void => {
+const applyMiddleware = (middlewares: Array<(app: Application) => void>) => (app: Application): void => {
     middlewares.forEach(middleware => {
         middleware(app);
     });
