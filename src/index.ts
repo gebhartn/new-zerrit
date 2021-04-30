@@ -5,8 +5,11 @@ import http from "http";
 import app from "./app";
 import { logger, handleUncaughtException } from "./utils";
 
-const httpListenerPort = config.get<number>("port");
-const httpsListenerPort = httpListenerPort + 1;
+process.env.AWS_ACCESS_KEY_ID = config.get<string>("aws.accessKey");
+process.env.AWS_SECRET_ACCESS_KEY = config.get<string>("aws.secretAccess");
+
+const httpListenerPort = config.get<number>("httpPort");
+const httpsListenerPort = config.get<number>("httpsPort");
 
 const httpServer = http.createServer(app).listen(httpListenerPort, () => {
   logger.info("App listening at localhost:" + httpListenerPort);
