@@ -10,6 +10,18 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint'],
-    rules: {},
+    plugins: ['@typescript-eslint', 'prettier'],
+    rules: {
+        'prettier/prettier': [
+            'error',
+            {
+                printWidth: 120,
+                tabWidth: 4,
+                singleQuote: true,
+                arrowParens: 'avoid',
+                hangingComma: 'always',
+                parser: 'typescript',
+            },
+        ],
+    },
 };
