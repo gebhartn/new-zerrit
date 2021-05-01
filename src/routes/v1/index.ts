@@ -1,9 +1,8 @@
 import { Router } from 'express';
-import * as Hello from './hello';
+import { default as auth } from './auth';
 
 const router = Router();
 
-router.get('/hello', Hello.sayHello);
-router.post('/hello', Hello.sayName);
+router.use('/auth', auth);
 
 export default router;
