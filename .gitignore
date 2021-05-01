@@ -118,4 +118,5 @@ dist
 .prettier_d
 .eslint_d
 
+config/local.json
 config/local.js
