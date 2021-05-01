@@ -5,4 +5,8 @@ module.exports = {
         region: 'us-west-2',
         bucketName: 'impression-int',
     },
+    auth: {
+        secret: 'is it secret is it safe',
+        salt: 10,
+    },
 };
